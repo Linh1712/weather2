@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+      defer
+    ></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="map.js"></script>
+    <title>Weather2</title>
+</head>
+<body>
+<div id="loader">Loading...</div>
+<div class="container">
+    <div style="display: flex; margin-top: 10px;">
+        <img src="./img/location.svg.svg" alt="" width="30px" onclick="alert('hlo')">
+        <div id="s">
+        </div>
+    </div>
+    <div id="form">
+    </div>
+    <div id="map" style="position:relative;width:600px;height:400px;background-color: black;"></div>
+</div>
+<script src="index.js"></script>
+<script>
+    (async () =>{
+        $.ajax({
+            xhrFields: {cors: false},
+            url: "./pack/package.json",
+            type: 'GET',
+            contentType: 'application/json',
+            success: (response) => {
+            let script = document.createElement("script");
+            const bing = response.key;
+            script.setAttribute("src", `https://www.bing.com/api/maps/mapcontrol?callback=initMap&key=${bing}`);
+            document.body.appendChild(script);
+        }
+    }).done(function(res){console.log(res)});
+    })();
+    </script>
+</body>
+</html>

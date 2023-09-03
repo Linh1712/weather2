@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+#preloader{
+    font-size: 30px;
+    font-weight: 300;
+    background: #000;
+    color: azure;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
+.container{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-family: sans-serif;
+}
+select{
+    text-transform: uppercase;
+    font-family: sans-serif;
+}
+#form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+#form img{
+    height: 100px;
+    margin: 0 auto;
+}
